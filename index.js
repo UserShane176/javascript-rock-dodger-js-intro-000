@@ -55,7 +55,7 @@ GAME.appendChild(rock);
    ROCKS.push(rock)
    return rock;
 
-
+}
 
 
 function endGame() {
