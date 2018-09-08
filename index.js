@@ -53,7 +53,7 @@ GAME.appendChild(rock);
     }
   }
 
-  moveRock();
+  function moveRock();
   ROCKS.push(rock);
   return rock;
 }
