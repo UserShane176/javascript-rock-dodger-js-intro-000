@@ -42,7 +42,7 @@ function createRock(x) {
   var top = 0
   rock.style.top = top
 GAME.appendChild(rock)
-
+  
   function moveRock() {
     if(checkCollision(rock) === true){
       endGame()
@@ -65,7 +65,15 @@ GAME.appendChild(rock)
 
 
 function endGame() {
-  
+  while(ROCK.length > 0){
+    GAME.removeChild(ROCK[0])
+    ROCK.shift()
+  }
+  clearInterval(gameInterval)
+  window.removeEventListener('keydown', moveDodger)
+  alert("YOU LOSE!")
+  Start.innerHTML = 'Play again?'
+  START.style.display = 'inline'
 }
 
 function moveDodger(e) {
