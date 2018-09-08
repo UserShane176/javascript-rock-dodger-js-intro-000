@@ -67,7 +67,7 @@ GAME.appendChild(rock)
 function endGame() {
   while(ROCKS.length > 0){
     GAME.removeChild(ROCK[0])
-    ROCK.shift()
+    ROCKS.shift()
   }
   clearInterval(gameInterval)
   window.removeEventListener('keydown', moveDodger)
