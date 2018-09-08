@@ -66,6 +66,7 @@ function endGame() {
   clearInterval(gameInterval);
   ROCKS.forEach(function(rock){rock.remove()})
   window.removeEventListener('keydown', moveDodger);
+  rock.remove();
   alert("YOU LOSE!");
   START.innerHTML = 'Play again?';
   START.style.display = 'inline';
