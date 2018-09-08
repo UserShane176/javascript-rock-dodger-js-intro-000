@@ -54,7 +54,7 @@ GAME.appendChild(rock)
     }
     else if(top >= GAME_HEIGHT - 20){
       GAME.removeChild(rock)
-      ROCK.shift()
+      ROCKS.shift()
     }
   }
 
