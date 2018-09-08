@@ -54,7 +54,7 @@ GAME.appendChild(rock);
    moveRock();
    ROCKS.push(rock)
    return rock;
- 
+
 
 
 
@@ -71,34 +71,37 @@ function endGame() {
 }
 
 function moveDodger(e) {
-if (e.which === LEFT_ARROW){
-  e.stopPropagation();
-  e.preventDefault();
+if (e.which === 37){
   moveDodgerLeft();
 }
-else if(e.which === RIGHT_ARROW){
-  e.stopPropagation();
-  e.preventDefault();
+else if(e.which === 39){
   moveDodgerRight();
-}
-
+ }
 }
 
 function moveDodgerLeft() {
-  const left = positionToInteger(dodger.style.left)
-  if (left > 0){
-    dodger.style.left = `${left - 2}px`;
-    window.requestAnimationFrame(moveDodgerLeft);
+      function step(){
+        var leftNumbers = DODGER.style.left.replace('px', '')
+        var left = parseInt(leftNumbers, 10);
+        if (left > 0){
+    DODGER.style.left = `${left -= 4}px`;
+    window.requestAnimationFrame(step)
+    }
   }
+  window.requestAnimationFrame(step);
 }
 
 function moveDodgerRight() {
-  const left = positionToInteger(dodger.style.left);
-  if (left < GAME_WIDTH - 40){
-    dodger.style.left = `${left + 2}px`;
-    window.requestAnimationFrame(moveDodgerRight);
+  function step(){
+    var leftNumbers = DODGER.style.left.replace('px', '')
+    var left = parseInt(leftNumbers, 10);
+    if (left < 360){
+    DODGER.style.left = `${left += 4}px`;
+    window.requestAnimationFrame(step)
+     }
+   }
+  window.requestAnimationFrame(step);
 }
-
 /**
  * @param {string} p The position property
  * @returns {number} The position as an integer (without 'px')
