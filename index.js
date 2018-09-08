@@ -28,7 +28,6 @@ function checkCollision(rock) {
 
 function createRock(x) {
   const rock = document.createElement('div');
-
   rock.className = 'rock';
   rock.style.left = `${x}px`;
 
@@ -59,7 +58,6 @@ GAME.appendChild(rock);
 
 
 function endGame() {
-  
   window.removeEventListener('keydown', moveDodger);
   clearInterval(gameInterval);
   ROCKS.forEach(function(rock){
