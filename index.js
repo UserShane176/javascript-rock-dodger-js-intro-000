@@ -53,10 +53,11 @@ GAME.appendChild(rock);
     }
   }
 
-  function moveRock();
-  ROCKS.push(rock);
-  return rock;
-}
+   moveRock();
+   ROCKS.push(rock)
+   return rock;
+ 
+
 
 
 function endGame() {
